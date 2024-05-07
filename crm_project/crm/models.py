@@ -9,6 +9,7 @@ class Contact(models.Model):
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
+    creation_data = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
         return self.fist_name + " " + self.last_name
