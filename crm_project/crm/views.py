@@ -6,6 +6,8 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
 
 def home(request):
+    if request.user.is_authenticated:
+        return redirect("dashboard")
     return render(request, "crm/index.html")
 
 def register(request):
@@ -30,7 +32,7 @@ def login(request):
                 auth.login(request, user=user)
                 return redirect("dashboard")
     context = {"form":form}
-    return render(request, "crm/register.html", context)
+    return render(request, "crm/login.html", context)
 
 @login_required(login_url="login")
 def logout(request):
@@ -43,3 +45,29 @@ def dashboard(request):
     context = {"contacts":contacts}
     return render(request, "crm/dashboard.html", context)
 
+@login_required(login_url="login")
+def view_record(request, pk):
+    contact = Contact.objects.get(id=pk)
+    context = {"contact":contact}
+    return render(request, "crm/view-record.html", context)
+
+"""
+TODO: Yet to implement CRUD / R is done above
+"""
+@login_required(login_url="login")
+def create_record(request, pk):
+    contact = Contact.objects.get(id=pk)
+    context = {"contact":contact}
+    return render(request, "crm/view-record.html", context)
+
+@login_required(login_url="login")
+def update_record(request, pk):
+    contact = Contact.objects.get(id=pk)
+    context = {"contact":contact}
+    return render(request, "crm/view-record.html", context)
+
+@login_required(login_url="login")
+def delete_record(request, pk):
+    contact = Contact.objects.get(id=pk)
+    context = {"contact":contact}
+    return render(request, "crm/view-record.html", context)
