@@ -19,4 +19,4 @@ class LoginForm(AuthenticationForm):
 class CreateUpdateContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ["first_name", "last_name", "email", "phone", "address", "city", "state", "country"]
+        fields = ["first_name", "last_name", "email", "phone", "role", "address", "city", "state", "country"]
