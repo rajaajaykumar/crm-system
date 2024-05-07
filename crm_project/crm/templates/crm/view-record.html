@@ -1,0 +1,22 @@
+{% extends 'crm/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>{{ contact.first_name }} {{ contact.last_name }}</h2>
+    <p>{{ contact.role }}</p>
+    <hr />
+    <div class="card">
+        <p><strong>Contact ID:</strong> {{ contact.id }}</p>
+        <p><strong>Email:</strong> {{ contact.email }}</p>
+        <p><strong>Phone:</strong> {{ contact.phone }}</p>
+        <p><strong>Address:</strong> {{ contact.address }}</p>
+        <p><strong>City:</strong> {{ contact.city }}</p>
+        <p><strong>State:</strong> {{ contact.state }}</p>
+        <p><strong>Country:</strong> {{ contact.country }}</p>
+        <p><strong>Created on:</strong> {{ contact.creation_data }}</p>
+    </div>
+    <a href="{% url 'dashboard' %}" class="btn btn-grey">Return to Dashboard</a>
+    <a href="{% url 'update-record' contact.id %}" class="btn btn-edit">Update</a>
+    <a href="{% url 'delete-record' contact.id %}" class="btn btn-danger">Delete</a>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'crm/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Dashboard</h2>
+    <p>Welcome {{ user }}!</p>
+    <hr />
+    <div class="records">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>City</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.id }}</td>
+                    <td>{{ contact }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.role }}</td>
+                    <td>{{ contact.city }}</td>
+                    <td><a href="{% url 'view-record' contact.id %}">&#10132; View</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

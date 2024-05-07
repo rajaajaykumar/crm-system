@@ -8,27 +8,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django CRM Project</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav>
-        DjangoCRM
-        <ul>
+    <nav class="navbar">
+        <a href="{% url 'home' %}" class="navbar-brand">DjangoCRM</a>
+        <ul class="navbar-nav">
             {% if user.is_authenticated %}
-            <li>Create</li>
-            <li>Dashboard</li>
-            <li>Logout</li>
+            <li class="nav-item"><a href="{% url 'dashboard' %}" class="nav-link">Create</a></li>
+            <li class="nav-item"><a href="{% url 'dashboard' %}" class="nav-link">Dashboard</a></li>
+            <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
             {% else %}
-            <li>Register</li>
-            <li>Login</li>
+            <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Register</a></li>
+            <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Login</a></li>
             {% endif %}
         </ul>
     </nav>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+    {% block content %}
+    {% endblock %}
 </body>
 
 </html>

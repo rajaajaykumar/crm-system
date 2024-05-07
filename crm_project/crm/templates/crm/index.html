@@ -1,0 +1,14 @@
+{% extends 'crm/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="pub-spac">Welcome to DjangoCRM</h2>
+    <p class="pub-spac">A simple yet powerful Customer Relationship Management (CRM) system built using Django.
+        Manage your customer data effortlessly with features for creating, updating, and deleting records. Get
+        started
+        with
+        DjangoCRM to streamline your business relationships today!</p>
+    <hr />
+    <a href="{% url 'register' %}" class="btn">Create an account</a>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'crm/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Create your account</h2>
+    <hr />
+    <div class="card">
+        <h1>Register</h1>
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password1" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Confirm Password</label>
+                <input type="password" id="password" name="password2" required>
+            </div>
+            <button class="btn" type="submit">Register</button>
+        </form>
+        <div class="text-center">
+            <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
