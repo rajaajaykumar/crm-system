@@ -1,39 +1,204 @@
-/* 
- * Credits:
- * https://mdbootstrap.com/snippets/standard/mdbootstrap/2948900?view=side
- */
-
-/* Color of the links BEFORE scroll */
-.navbar-scroll .nav-link,
-.navbar-scroll .navbar-toggler-icon,
-.navbar-scroll .navbar-brand {
-    color: #262626;
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Color of the navbar BEFORE scroll */
-.navbar-scroll {
-    background-color: #FFC017;
+/* Body styles */
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
 }
 
-/* Color of the links AFTER scroll */
-.navbar-scrolled .nav-link,
-.navbar-scrolled .navbar-toggler-icon,
-.navbar-scroll .navbar-brand {
-    color: #262626;
-}
-
-/* Color of the navbar AFTER scroll */
-.navbar-scrolled {
-    background-color: #fff;
-}
-
-/* An optional height of the navbar AFTER scroll */
-.navbar.navbar-scroll.navbar-scrolled {
-    padding-top: auto;
-    padding-bottom: auto;
+/* Navbar styles */
+.navbar {
+    background-color: #343a40;
+    padding: 10px 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar-brand {
-    font-size: unset;
-    height: 3.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-left: 10px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+/* Container styles */
+.container {
+    max-width: 960px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.container .pub-spac {
+    margin-bottom: 16px;
+}
+
+.container h2 {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.container p {
+    color: #666;
+    margin: 8px auto;
+}
+
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    width: max-content;
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    margin: 20px auto;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-grey {
+    margin-right: 16px;
+    background-color: #666;
+}
+
+.btn-grey:hover {
+    background-color: #333;
+}
+
+.btn-danger {
+    margin-left: 16px;
+    background-color: #ff0000;
+}
+
+.btn-danger:hover {
+    background-color: #af0000;
+}
+
+.card {
+    text-align: left;
+    max-width: 400px;
+    margin: 8px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card form {
+    margin-bottom: 0;
+}
+
+.card .form-group {
+    margin-bottom: 12px;
+}
+
+.card label {
+    font-weight: bold;
+}
+
+.card input[type="text"],
+.card input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.card .btn {
+    width: 100%;
+}
+
+.card .btn:hover {
+    background-color: #0056b3;
+}
+
+.card .text-center {
+    text-align: center;
+}
+
+.card .text-center p {
+    margin-bottom: 0;
+}
+
+.card .text-center a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.card .text-center a:hover {
+    background-color: underline;
+}
+
+/* Style for Table */
+.records {
+    text-align: left;
+    margin: 8px auto;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect */
+tr:hover {
+    background-color: #f5f5f5;
 }
