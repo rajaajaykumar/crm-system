@@ -46,16 +46,18 @@ def dashboard(request):
     return render(request, "crm/dashboard.html", context)
 
 @login_required(login_url="login")
-def view_record(request, pk):
-    contact = Contact.objects.get(id=pk)
-    context = {"contact":contact}
-    return render(request, "crm/view-record.html", context)
+def create_record(request):
+    form = CreateUpdateContactForm()
+    if request.method == "POST":
+        form = CreateUpdateContactForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("dashboard")
+    context = {"form":form}
+    return render(request, "crm/create-record.html", context)
 
-"""
-TODO: Yet to implement CRUD / R is done above
-"""
 @login_required(login_url="login")
-def create_record(request, pk):
+def view_record(request, pk):
     contact = Contact.objects.get(id=pk)
     context = {"contact":contact}
     return render(request, "crm/view-record.html", context)
@@ -63,11 +65,20 @@ def create_record(request, pk):
 @login_required(login_url="login")
 def update_record(request, pk):
     contact = Contact.objects.get(id=pk)
-    context = {"contact":contact}
-    return render(request, "crm/view-record.html", context)
+    form = CreateUpdateContactForm(instance=contact)
+    if request.method == "POST":
+        form = CreateUpdateContactForm(data=request.POST, instance=contact)
+        if form.is_valid():
+            form.save()
+            return redirect("dashboard")
+    context = {"form":form}
+    return render(request, "crm/update-record.html", context)
 
 @login_required(login_url="login")
 def delete_record(request, pk):
     contact = Contact.objects.get(id=pk)
+    if request.method == "POST":
+        contact.delete()
+        return redirect("dashboard")
     context = {"contact":contact}
-    return render(request, "crm/view-record.html", context)
+    return render(request, "crm/delete-record.html", context)
