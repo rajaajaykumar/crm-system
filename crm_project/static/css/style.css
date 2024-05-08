@@ -112,6 +112,10 @@ body {
     background-color: #af0000;
 }
 
+#btn-del {
+    background-color: #ff0000;
+}
+
 .card {
     text-align: left;
     max-width: 400px;
@@ -194,11 +198,21 @@ td {
     text-align: left;
 }
 
+td a {
+    text-decoration: none;
+    color: #007bff;
+    transition: 0.1s color, 0.1s font-size;
+}
+
+td a:hover {
+    color: #000;
+    font-size: 14px;
+}
+
 th {
     background-color: #f2f2f2;
 }
 
-/* Hover effect */
 tr:hover {
     background-color: #f5f5f5;
 }
