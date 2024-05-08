@@ -1,4 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'crm/base.html' %}
 
 {% block content %}
+<div class="container">
+    <h2>Update the record</h2>
+    <hr />
+    <div class="card">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn" type="submit">Update</button>
+        </form>
+    </div>
+</div>
 {% endblock %}

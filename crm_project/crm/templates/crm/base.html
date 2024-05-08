@@ -20,9 +20,10 @@
         <a href="{% url 'home' %}" class="navbar-brand">DjangoCRM</a>
         <ul class="navbar-nav">
             {% if user.is_authenticated %}
-            <li class="nav-item"><a href="{% url 'dashboard' %}" class="nav-link">Create</a></li>
+            <li class="nav-item"><a href="{% url 'create-record' %}" class="nav-link">Create</a></li>
             <li class="nav-item"><a href="{% url 'dashboard' %}" class="nav-link">Dashboard</a></li>
-            <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
+            <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link"><i
+                        class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
             {% else %}
             <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Register</a></li>
             <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Login</a></li>
@@ -31,6 +32,7 @@
     </nav>
     {% block content %}
     {% endblock %}
+    <script src="https://kit.fontawesome.com/f5b1a89175.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

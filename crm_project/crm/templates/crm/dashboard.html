@@ -21,7 +21,7 @@
                 {% for contact in contacts %}
                 <tr>
                     <td>{{ contact.id }}</td>
-                    <td>{{ contact }}</td>
+                    <td>{{ contact.first_name }} {{ contact.last_name }}</td>
                     <td>{{ contact.email }}</td>
                     <td>{{ contact.role }}</td>
                     <td>{{ contact.city }}</td>

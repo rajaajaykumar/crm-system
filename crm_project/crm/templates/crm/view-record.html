@@ -15,8 +15,9 @@
         <p><strong>Country:</strong> {{ contact.country }}</p>
         <p><strong>Created on:</strong> {{ contact.creation_data }}</p>
     </div>
-    <a href="{% url 'dashboard' %}" class="btn btn-grey">Return to Dashboard</a>
-    <a href="{% url 'update-record' contact.id %}" class="btn btn-edit">Update</a>
-    <a href="{% url 'delete-record' contact.id %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'dashboard' %}" class="btn btn-grey">Return to Dashboard <i class="fa-solid fa-backward"></i></a>
+    <a href="{% url 'update-record' contact.id %}" class="btn btn-edit">Update <i
+            class="fa-solid fa-pen-to-square"></i></a>
+    <a href="{% url 'delete-record' contact.id %}" class="btn btn-danger">Delete <i class="fa-solid fa-trash"></i></a>
 </div>
 {% endblock %}
